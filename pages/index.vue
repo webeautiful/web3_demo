@@ -5,6 +5,6 @@ const { isConnected } = useAccount();
 </script>
 
 <template>
-  <Account v-if="isConnected" />
+  <Connected v-if="isConnected" />
   <Connect v-else />
 </template>

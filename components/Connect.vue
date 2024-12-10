@@ -2,8 +2,8 @@
 import { useConnect, useChainId } from '@wagmi/vue';
 
 const chainId = useChainId();
-const { connectors, connect } = useConnect();
-console.log(chainId, connectors)
+const { connectors, connect, error } = useConnect();
+console.log(chainId.value, connectors)
 </script>
 
 <template>
@@ -14,9 +14,10 @@ console.log(chainId, connectors)
   >
     <template #leading>
       <UAvatar
-        :src="connector.icon ?? 'https://avatars.githubusercontent.com/u/739984?v=4'"
+        :src="connector.icon ?? 'https://avatars.githubusercontent.com/u/3364316?v=4'"
         size="2xs"
       />
     </template>
   </UButton>
+  <div v-if="error">❌{{ error }}</div>
 </template>

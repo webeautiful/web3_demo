@@ -6,7 +6,7 @@ const { disconnect } = useDisconnect();
 </script>
 
 <template>
-  <div>Address: {{ address }}</div>
+  <div>Address: <br/> {{ address }}</div>
   <div>Connected to {{ connector?.name }} Connector.</div>
   <UButton @click="disconnect()">Disconnect</UButton>
 </template>

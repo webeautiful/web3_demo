@@ -1,10 +1,11 @@
 import { WagmiPlugin, createConfig, http } from "@wagmi/vue"
 import { QueryClient, VueQueryPlugin } from "@tanstack/vue-query"
-import { injected, metaMask, safe } from "@wagmi/vue/connectors"
+import { injected, metaMask, safe, walletConnect } from "@wagmi/vue/connectors"
 import type { Transport } from "viem"
-import { bsc, bscTestnet, mainnet, sepolia } from 'viem/chains'
+import { bsc, bscTestnet, mainnet, sepolia, polygon } from 'viem/chains'
 
-export const Network = [mainnet, sepolia, bsc, bscTestnet ] as const
+export const Network = [bsc, bscTestnet,  mainnet, sepolia, polygon ] as const
+// export const Network = [bsc] as const
 
 export const config = createConfig({
   chains: Network,
@@ -12,7 +13,12 @@ export const config = createConfig({
     acc[chain.id] = http()
     return acc
   }, {} as Record<number, Transport>),
-  connectors: [],
+  connectors: [
+    injected(),
+    // walletConnect({
+    //   projectId: '56aacb244edc63d7ce0d9cc0932f7c7c'
+    // }),
+],
 })
 const queryClient = new QueryClient()
 export default defineNuxtPlugin((nuxtApp) => {
