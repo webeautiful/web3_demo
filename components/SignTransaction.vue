@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useAccount, useSendTransaction } from '@wagmi/vue'
-import { bsc, bscTestnet, mainnet, sepolia, polygon } from 'viem/chains'
 import { encodeFunctionData, erc20Abi, parseEther, parseUnits, prepareEncodeFunctionData } from 'viem'
 const { address } = useAccount()
 const { data, error, sendTransaction } = useSendTransaction()

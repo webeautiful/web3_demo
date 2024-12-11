@@ -3,7 +3,6 @@ import { useConnect, useChainId } from '@wagmi/vue';
 
 const chainId = useChainId();
 const { connectors, connect, error } = useConnect();
-console.log(chainId.value, connectors)
 </script>
 
 <template>
