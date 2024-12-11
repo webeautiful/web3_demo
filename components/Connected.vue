@@ -2,6 +2,6 @@
   <Account />
   <SwitchNetwork />
   <State />
-  <Signing />
-  <Transactions />
+  <SignMessage />
+  <SignTransaction />
 </template>

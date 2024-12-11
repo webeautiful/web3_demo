@@ -33,7 +33,7 @@ const sendToken = () => {
 }
 </script>
 <template>
-  <UDivider label="Transactions" class="mt-4 mb-2"></UDivider>
+  <UDivider label="Sign Transaction" class="mt-4 mb-2"></UDivider>
   <UButtonGroup>
     <UButton label="Send ETH" @click="sendETH"/>
     <UButton label="Send ERC20 Tokens" @click="sendToken"/>
