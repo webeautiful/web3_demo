@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useConnect, useChainId } from '@wagmi/vue';
-
 const chainId = useChainId();
 const { connectors, connect, error } = useConnect();
 </script>

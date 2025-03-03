@@ -1,5 +1,6 @@
 <template>
   <Account />
+  <SwitchAccount />
   <SwitchNetwork />
   <State />
   <SignMessage />
